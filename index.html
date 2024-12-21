@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Image Classification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sisi Kiri: Judul, Petunjuk, dan Upload -->
+        <div class="left-side">
+            <header>
+                <h1>Fruit Image Classification</h1>
+                <p>Upload an image to classify:</p>
+            </header>
+
+            <div id="guidelines">
+                <h3>Image Guidelines</h3>
+                <ul>
+                    <li>Plain white background.</li>
+                    <li>The fruit image should not be a 2D or 3D illustration; only real photos are accepted.</li>
+                    <li>The fruit image must contain only one fruit, positioned in the center.</li>
+                    <li>The fruit should have common colors and features typical of its type.</li>
+                    <li>The fruit should not be rotten or show any signs of spoilage.</li>
+                </ul>
+            </div>
+
+            <div class="image-upload">
+                <input type="file" id="imageInput" accept="image/*" />
+            </div>
+        </div>
+
+        <!-- Sisi Kanan: Hasil Klasifikasi -->
+        <div class="right-side">
+            <div id="imageContainer">
+                <img id="uploadedImage" src="" alt="Uploaded Image" style="display:none;" />
+            </div>
+
+            <div class="classify-button">
+                <button id="classifyButton">Classify</button>
+            </div>
+
+        <!-- Menampilkan hasil klasifikasi dengan taskbars yang berada di sisi -->
+        <section id="result" class="result">
+            <h2>Prediction Result:</h2>
+            <div id="taskbarsContainer">
+
+                <div id="taskbarAnggur" class="taskbar">
+                    <span>Anggur</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarApel" class="taskbar">
+                    <span>Apel</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarBelimbing" class="taskbar">
+                    <span>Belimbing</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarJeruk" class="taskbar">
+                    <span>Jeruk</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarKiwi" class="taskbar">
+                    <span>Kiwi</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarMangga" class="taskbar">
+                    <span>Mangga</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarNanas" class="taskbar">
+                    <span>Nanas</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarPisang" class="taskbar">
+                    <span>Pisang</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarSemangka" class="taskbar">
+                    <span>Semangka</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+        
+                <div id="taskbarStroberi" class="taskbar">
+                    <span>Stroberi</span><div class="progress-bar"></div>
+                    <span class="prediction-label"></span>
+                </div>
+                
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="script.js"></script>
+</body>
+</html>

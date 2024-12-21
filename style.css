@@ -1,0 +1,243 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Desain umum halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8; /* Warna latar belakang yang lebih natural */
+    color: #beab9e; /* Warna teks yang kontras dan mudah dibaca */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, rgba(110, 182, 224, 0.6), rgba(70, 57, 139, 0.6)); /* Gradasi transparan */
+}
+
+/* Container utama */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 30px; /* Menambahkan jarak antar kolom */
+}
+
+/* Sisi Kiri */
+.left-side {
+    width: 40%;
+    padding: 25px;
+    background-color: rgba(255, 170, 246, 0.9); /* Warna latar belakang sisi kiri dengan transparansi */
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(202, 116, 181, 0.664);
+    background: rgba(33, 58, 73, 0.8); /* Gradasi transparan untuk sisi kiri */
+    backdrop-filter: blur(10px); /* Menambahkan efek blur */
+}
+
+/* Judul dan deskripsi */
+.left-side header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    color: #bcf1c6;
+    text-align: center;
+}
+
+.left-side header p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Guidelines */
+#guidelines {
+    background-color: rgb(84, 174, 179); /* Guidelines dengan transparansi */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#guidelines h3 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+#guidelines ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #000000;
+}
+
+#guidelines li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Pengaturan input file */
+.image-upload input[type="file"] {
+    padding: 14px;
+    font-size: 1.1rem;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.image-upload input[type="file"]:hover {
+    border-color: #967f26;
+}
+
+/* Sisi Kanan */
+.right-side {
+    width: 55%;
+    padding: 25px;
+    background-color: rgba(29, 68, 46, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgb(246, 238, 238);
+    margin-top: 0px;
+    backdrop-filter: blur(10px); /* Menambahkan efek blur */
+}
+
+#uploadedImage {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(219, 213, 213, 0.664);
+}
+
+/* Tombol klasifikasi */
+.classify-button button {
+    background-color: #4bc451;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background: rgb(0, 255, 8); /* Tombol hijau transparan */
+}
+
+.classify-button button:hover {
+    background-color: #125c16;
+    transform: scale(1.05);
+}
+
+/* Hasil klasifikasi */
+.result h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Kontainer taskbars */
+#taskbarsContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Taskbars untuk setiap klasifikasi */
+.taskbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.taskbar span {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    width: 180px;
+    text-align: left;
+    color: #9d8d8d;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 14px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: #00ff08;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+/* Responsif untuk tampilan kecil */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-side, .right-side {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .left-side header h1 {
+        font-size: 2.2rem;
+    }
+
+    .classify-button button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+    .image-upload input[type="file"] {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Responsif untuk tampilan sangat kecil (ponsel) */
+@media screen and (max-width: 480px) {
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .left-side header h1 {
+        font-size: 2rem;
+    }
+
+    .left-side header p {
+        font-size: 1rem;
+    }
+
+    .taskbar span {
+        font-size: 1rem;
+    }
+}
